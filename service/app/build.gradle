@@ -28,7 +28,7 @@ android {
                 'proguard-android-optimize.txt'
             ), 'proguard-rules.pro'
             // Chỉ định signingConfig nếu có keystore riêng
-            signingConfig signingConfigs.release
+            
         }
     }
 
