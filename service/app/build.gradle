@@ -18,9 +18,17 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
-        }
-        configureEach  {
             minifyEnabled false
+        }
+        release {
+            // Bật R8 (mặc định khi minifyEnabled = true)
+            minifyEnabled true
+            shrinkResources true   // (tùy chọn) loại bỏ tài nguyên không dùng
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'
+            ), 'proguard-rules.pro'
+            // Chỉ định signingConfig nếu có keystore riêng
+            signingConfig signingConfigs.release
         }
     }
 
