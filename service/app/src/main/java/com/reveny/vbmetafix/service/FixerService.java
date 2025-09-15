@@ -1,6 +1,3 @@
-//
-// Decompiled by Jadx - 2555ms
-//
 package com.reveny.vbmetafix.service;
 
 import android.app.Notification;
@@ -14,7 +11,7 @@ import android.os.HandlerThread;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
-import com.reveny.vbmetafix.service.FixerService$;
+
 import com.reveny.vbmetafix.service.keyattestation.Entry;
 
 public class FixerService extends Service {
@@ -50,9 +47,13 @@ public class FixerService extends Service {
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= 26) {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Fixer Service Channel", 2);
+            NotificationChannel channel =
+                    new NotificationChannel(CHANNEL_ID,
+                            "Fixer Service Channel",
+                            NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription("Used for running VBMeta fixing operations");
-            NotificationManager notificationManager = (NotificationManager) getSystemService(NotificationManager.class);
+            NotificationManager notificationManager =
+                    (NotificationManager) getSystemService(NotificationManager.class);
             if (notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
             }
@@ -61,16 +62,26 @@ public class FixerService extends Service {
 
     private Notification createNotification() {
         if (Build.VERSION.SDK_INT >= 26) {
-            return new Notification.Builder(this, CHANNEL_ID).setContentTitle("VBMeta Service").setContentText("Processing boot hash...").setSmallIcon(0x01080041).build();
+            return new Notification.Builder(this, CHANNEL_ID)
+                    .setContentTitle("VBMeta Service")
+                    .setContentText("Processing boot hash...")
+                    .setSmallIcon(0x01080041)
+                    .build();
         }
-        return new Notification.Builder(this).setContentTitle("VBMeta Service").setContentText("Processing boot hash...").setSmallIcon(0x01080041).setPriority(-1).build();
+        return new Notification.Builder(this)
+                .setContentTitle("VBMeta Service")
+                .setContentText("Processing boot hash...")
+                .setSmallIcon(0x01080041)
+                .setPriority(Notification.PRIORITY_LOW)
+                .build();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "Service Started");
-        this.handler.post(new FixerService$.ExternalSyntheticLambda0(this));
-        return 2;
+        // Sử dụng method reference thay cho lớp synthetic của Jadx
+        this.handler.post(this::lambda$onStartCommand$0);
+        return START_STICKY;
     }
 
     public void lambda$onStartCommand$0() {
