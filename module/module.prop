@@ -4,3 +4,4 @@ version=1.2.1
 versionCode=121
 author=Reveny, Kakathic
 description=Reset the VBMeta digest property with the correct boot hash to fix detection
+updateJson=https://raw.githubusercontent.com/Zenlua/Android-VBMeta-Fixer/refs/heads/main/update.json
