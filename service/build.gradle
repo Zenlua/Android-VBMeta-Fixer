@@ -1,38 +1,3 @@
 plugins {
-    alias(libs.plugins.android.application)
-}
-
-android {
-    namespace 'com.reveny.vbmetafix.service'
-    compileSdk 34
-
-    defaultConfig {
-        minSdk 24
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
-        proguardFiles += 'proguard-rules.pro'
-        multiDexEnabled false
-    }
-
-    buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
-        release {
-            minifyEnabled true
-        }
-        configureEach  {
-            minifyEnabled false
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-}
-
-dependencies {
-    implementation libs.bcprov.jdk18on
+    alias(libs.plugins.android.application) apply false
 }
