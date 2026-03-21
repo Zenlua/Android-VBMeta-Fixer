@@ -43,7 +43,7 @@ jobs:
       - name: Build with Gradle
         working-directory: service
         run: |
-          ./gradlew assembleRelease
+          ./gradlew assembleDebug
           cp -f app/build/outputs/apk/*/*.apk ../module/service/service.apk
 
       - name: Upload APK
