@@ -2,7 +2,7 @@
 A Magisk/KernelSU/Apatch module to fix VBMeta detections on Android. <br>
 It works by performing **key attestation** and setting the system property `ro.boot.vbmeta.digest` to the verified boot hash result.
 
-[![Stars](https://img.shields.io/github/stars/reveny/Android-VBMeta-Fixer?label=Stars)](https://github.com/Zenlua)
+[![Stars](https://img.shields.io/github/stars/Zenlua/Android-VBMeta-Fixer?label=Stars)](https://github.com/Zenlua)
 [![Release](https://img.shields.io/github/v/release/Zenlua/Android-VBMeta-Fixer?label=Release&logo=github)](https://github.com/Zenlua/Android-VBMeta-Fixer/releases/latest)
 [![Download](https://img.shields.io/github/downloads/Zenlua/Android-VBMeta-Fixer/total?label=Downloads&logo=github)](https://github.com/Zenlua/Android-VBMeta-Fixer/releases/)
 [![Channel](https://img.shields.io/badge/Telegram-Channel-blue.svg?logo=telegram)](https://t.me/reveny1)
