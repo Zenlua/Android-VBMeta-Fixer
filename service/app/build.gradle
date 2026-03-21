@@ -19,6 +19,9 @@ android {
         debug {
             signingConfig signingConfigs.debug
         }
+        release {
+            minifyEnabled true
+        }
         configureEach  {
             minifyEnabled false
         }
