@@ -1,4 +1,4 @@
-package com.reveny.vbmetafix;
+package com.reveny.vbmetafix.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
